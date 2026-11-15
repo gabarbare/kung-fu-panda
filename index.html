@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kung Fu Panda — Légendes du Combat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-wrap">
+  <canvas id="game" width="1280" height="720"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="fighter-hud left">
+      <div class="fname" id="p1-name"></div>
+      <div class="bar health"><div class="fill p1" id="p1-hp"></div></div>
+      <div class="bar energy"><div class="fill" id="p1-en"></div></div>
+    </div>
+    <div id="timer-box">
+      <div id="timer">60</div>
+      <div id="round-pips"></div>
+    </div>
+    <div class="fighter-hud right">
+      <div class="fname" id="p2-name"></div>
+      <div class="bar health"><div class="fill p2" id="p2-hp"></div></div>
+      <div class="bar energy"><div class="fill" id="p2-en"></div></div>
+    </div>
+  </div>
+
+  <div id="announce"></div>
+
+  <div id="screen-menu" class="screen">
+    <div class="title-block">
+      <h1>KUNG FU PANDA</h1>
+      <h2>Légendes du Combat</h2>
+    </div>
+    <div class="menu-section">
+      <p class="label">Difficulté des bots</p>
+      <div class="btn-row" id="difficulty-row">
+        <button class="btn diff" data-diff="easy">Facile</button>
+        <button class="btn diff selected" data-diff="normal">Normal</button>
+        <button class="btn diff" data-diff="hard">Difficile</button>
+      </div>
+    </div>
+    <button class="btn primary" id="btn-play">COMBATTRE</button>
+    <div class="controls-help">
+      <p><b>Déplacement :</b> ← → &nbsp;|&nbsp; <b>Saut :</b> ↑ ou Espace &nbsp;|&nbsp; <b>Garde :</b> ↓</p>
+      <p><b>Poing :</b> A ou J &nbsp;|&nbsp; <b>Pied :</b> Z ou K &nbsp;|&nbsp; <b>Spécial :</b> E ou L (jauge pleine)</p>
+    </div>
+  </div>
+
+  <div id="screen-select" class="screen hidden">
+    <h2 id="select-title">Choisis ton guerrier</h2>
+    <div id="char-grid" class="char-grid"></div>
+    <div id="char-info" class="char-info">
+      <div id="info-name"></div>
+      <div id="info-title"></div>
+      <div id="info-stats"></div>
+      <div id="info-special"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn" id="btn-back">Retour</button>
+      <button class="btn primary" id="btn-fight" disabled>COMBAT !</button>
+    </div>
+  </div>
+
+  <div id="screen-end" class="screen hidden">
+    <h1 id="end-title"></h1>
+    <p id="end-sub"></p>
+    <div class="btn-row">
+      <button class="btn primary" id="btn-rematch">Revanche</button>
+      <button class="btn" id="btn-reselect">Changer de guerrier</button>
+      <button class="btn" id="btn-menu">Menu</button>
+    </div>
+  </div>
+</div>
+<script src="game.js"></script>
+</body>
+</html>
